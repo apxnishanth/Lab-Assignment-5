@@ -128,11 +128,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  var totalProduct = [1];
+  var str = '';
+  for (var i = 0;i < multArr.length;i++) {
+    totalProduct = multiply(totalProduct[0], multArr[i]);
+    if (parseInt(i) === 0) {
+      str = multArr[i];
+    }
+    else
+    {
+      str = str + ',' + multArr[i];
+    }
+  }
+  totalProduct[1] = 'The numbers ' +str+ ' have a product of ' +totalProduct[0] + '.';
+  console.log(totalProduct[1]);
+  return totalProduct;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+ testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
